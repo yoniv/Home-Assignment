@@ -25,8 +25,7 @@ SECRET_KEY = 'a^4-3+x^7erp^%=2)m*0j)fi6r30usa9ew=j6og*!+l0!)k)*o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['herokudjangoapp.messages-home-assignment.com',
-                 '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
