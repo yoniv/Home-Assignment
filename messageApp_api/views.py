@@ -54,7 +54,7 @@ def get_message(request):
         return {"error": "check the request, something went wrong!!!"}
 
 
-@api_view(['GET'])
+@api_view(['GET', 'PUT'])
 def create_message(request):
     """" create the message by the giving parameters """
     try:
