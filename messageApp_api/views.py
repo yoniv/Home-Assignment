@@ -49,11 +49,12 @@ def get_message(request):
             msg.save()
         serializer = MessageSerializer(msgs_list, many=True)
         return HttpResponse(json.dumps(serializer.data), content_type='application/json')
+
     except Exception:
         return {"error": "check the request, something went wrong!!!"}
 
 
-@api_view(['PUT', 'GET'])
+@api_view(['GET'])
 def create_message(request):
     """" create the message by the giving parameters """
     print('in create')
@@ -68,6 +69,7 @@ def create_message(request):
         new_msg.save()
         serializer = MessageSerializer(new_msg, many=False)
         return HttpResponse(json.dumps(serializer.data), content_type='application/json')
+
     except Exception:
         return {"error": "check the request, something went wrong!!!"}
 
