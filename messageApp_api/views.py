@@ -15,7 +15,7 @@ def get_all_messages(request):
         json_data = json.loads(request.body)
         msgs_list = Message.objects.filter(reciever=json_data['email'])
         if not msgs_list:
-            return HttpResponse('There are no messages for this email')
+            return HttpResponse('There are no messages for this email address')
         serializer = MessageSerializer(msgs_list, many=True)
         return HttpResponse(json.dumps(serializer.data), content_type='application/json')
     except Exception:
