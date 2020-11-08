@@ -57,10 +57,10 @@ def get_message(request):
 @api_view(['GET'])
 def create_message(request):
     """" create the message by the giving parameters """
-    #HttpResponse('in create')
     try:
-        return HttpResponse('in try')
         json_data = json.loads(request.body)
+        if not json_data:
+            return HttpResponse('get json_data')
         new_msg = Message()
         new_msg.sender = json_data['sender']
         new_msg.reciever = json_data['reciever']
